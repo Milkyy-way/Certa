@@ -1,0 +1,210 @@
+LIST
+----
+
+
+List are use to store multiple data in single variable. Its one of the 4 built in data type
+
+List are ordered(can only be altered by few methods), changeable(change, add, remove) and allow duplicate
+It can store any data type
+
+ACCESS ITEM LIST
+We can access list item by assigining the index number i.e. mylist[3], mylist[0:], mylist[-1](means that list will start from end)
+We can search the elements in list eg if "apple" in mylist:----> this will give true false
+
+CHANGE ITEM LIST
+We can change by giving the value to the index we want change
+mylist[1]="xyz"--->this will change the value at index one we can use range like mylist[1,3]="xyz", "abc"
+We can also use insert method mylist.insert(2,"xyz")
+
+ADD LIST ITEMS
+We can use append method, insert method at any index and extend method which can be use to extend any 4 data set
+
+REMOVE ITEM 
+We can use mylist.remove("xyz"), pop()method also for specific index, del mylist[2] or del mylist. Del with list name will delete the complete list.
+We can use clear the list by clear() which will empty the list but will not delete the list
+
+LOOPING IN LIST
+We can use for loop like 
+For x in mylist:---> this will ittrate through the element
+For x in range(len(mylist))----> this will loop for the index of list
+We can use loop comprihyasion for shortest looping
+[print(x) for x in mylist] 
+
+LIST CPMPREHENSION
+We can set the value
+[x.upper() for x in fruits]
+[x if x != "banana" else "orange" for x in fruits] 
+
+SORTING
+mylist.sort()
+mylist.sort(reverse=True)
+Mylist.reverse()
+We can define function for sorting and use that function as a built in function inside sorting
+ def fun (n):
+	Return abs(n-50)
+Mylist.sort(key = fun)
+
+COPY LIST
+Mylist1= mylist.copy()
+Mylist1 = list(myslist)
+
+JOIN LIST
+Add 2 list 
+Append second list with first
+Extending the list
+
+METHODS IN LIST
+There are 11 method
+
+
+TUPIL
+-----
+
+Tupils are used to store multiple items in single variable
+Tupile are ordered and unchangable and allow duplicate value
+Tuple are indexed
+Mytuple = ("apple","banana")
+Tupil can also store any data type and different data type in single variable
+We can use tuple constructor to form tupil
+Mytupil=tuple(("apple","banana"))
+
+ACCESS TUPLE ITEM
+Mytuple[1]
+Mytuple[2:4]
+Mytuple[-5:-1]
+
+CHECK THE ITEM
+If "apple" in mytuple:
+	Print("yes")
+
+UPDATE TUPLE
+Tuple is unchagable or immutable meaning we can not change add or remove items once tuple is created
+
+In order to change the tuple we can convert into list then change it and again convert it back into tuple
+Mytuple=("apple","banana")
+x=list(mytuple)
+x.append("orange")
+Mytuple=tuple(x)
+
+We can also add tuple to tuple without converting
+We can remove tuple by converting into list or we can use del to completely delete the tuple
+
+UNPACKING TUPLE
+We can assign variable to each element in tuple 
+(green,orange) = fruits …. In this "green" variavble will be for 0th index value of fruits tuple
+
+LOOP TUPLE
+Same as other loops
+
+JOIN TUPLE
+We can add multiple tuple
+
+TUPLE METHODS
+Counts()---> return the number of times a spicified value occurred in a tuple
+Index()---> search the value for specified value and return its position
+
+
+SET
+---
+
+Set are used to store multiple items in single variable.
+Set is a collection which is unordered unchangeble and unindexed and do not allow duplicate value
+
+Myset ={"apple","banana"}
+
+If we put duplicate value then set will ingore the duplicate value 
+
+In set 1 and True are consider as duplicate value
+
+Set can be of any data type and contain diff data type
+
+Set data type is SET
+We can use set constructor to make a set set()
+Myset=set(("apple","banana")) it will contain double round brackets
+
+ACCESS SET ITEMS
+Items in set can not be accessed by index value bcz there is no index concept in set. We have to use for loop and to check the value we can use "in"
+
+ADDITION IN SET
+Set can not be changed but we can add items in set
+Myset.add("orange")
+
+We can use update method which will add the other set or different ittrable(list,tuple,dictonary) completely
+Myset.update(myset2)----> myset2 can be list,tyuple,set,dic.
+
+REMOVING SET ITEMS
+If we want to remove certain items then we can use remove() or discard() method. If element is not present then remove will throw error but discard will not.
+Mylist.remove("banana")
+We can also use pop() method to remove item but in this we will not be sure what we are removing.
+By using clear() method we can empty the set and el keyword will delete the whole set
+
+LOOP THE SET
+It is same as other i.e. for loop
+
+JOIN SET
+We can use update() which will add items of set 2 in set 1 or we can use union() in which new set will be formed which has element of both set.
+If we need to find duplicate values then we can use intersection_update() this will not give the new set. But if we use intersection() then new set will form and duplicate value will be present in that new set,
+If you want to keep all but not duplicate then we will use symmetric_difference_update() method this will update the existing set. To make new set we will use  symmetric_difference() method
+
+
+DICTIONARY
+----------
+Dictionary are use to store data values in  key value pair
+It is ordered, changeable and do not allow duplicate value.
+It can be refered by key name
+Mydict={"fruit":"banana", "place":"delhi"}
+Print(mydict(["fruit"]))
+When we say that duplicate is not allowed that means same key can not be present In dictionary. IF we put duplicate value then it will overwrite the existing value.
+Any data type of value can be present.
+Dictionary has its own data type i.e. dictionary
+We can use dictionary constructor tpo form dictionary i.e. dict()
+
+ACCESSING ITEMS
+We can access by key mydict["fruit"] or mydict.get("fruits")
+We can get all the keys by keys() function---> mydict.keys()
+We can get all the values by values() method
+Items() method will return all the key value in tuple form inside a list.
+We can check if the key exist or not
+
+CHANGE ITEMSWe can refer by key name and change the value 
+Mylist["fruits"]="orange"
+We can also use update method
+Myfruits.update({"fruits": orange})
+
+ADD ITEM
+By using update method we can add things
+
+REMOVE ITEMS
+We can use pop() which will remove the specified key, popitem() it will remove the last item from the dictionary
+We can use del to remove specific key or complete dictionary
+Clear() will empty the dictionary
+
+LOOPING ITEMS
+We can use for loop in key or value or both
+
+COPY A DICT
+We can not make copy of mydict just by assigning to other variable bcz that will just act like a reference in memory.
+We can use copy() function mydict1=mydict.copy()
+Or we can use dict() mydict1=dict(mydict)
+
+NESTED DICTIONARY
+We can make dictionary inside dictionary
+
+
+
+CLASSES
+-------
+We can use class keyword to create "class Person:"and to call the class we need object which we can create by p=Person()
+We have to create __init__(self,x,y) function to pass the argument
+__str__() we need to use this function if we want to return the class in form of string
+  def __str__(self):
+    return f"{self.name}({self.age})"
+
+SELF is current instance of the class and used to access the variables of class.
+We can use any name instead of self but it should be the 1st parameter in the argument
+
+We can modify the object parameter we can delete the parameter or delete the function.
+
+PASS statement ---> we can not leave the class undefined but if we created a class and we don’t want to mention any content then we need to write "pass" keyword after clearting class so that this class will not through error.
+
+
