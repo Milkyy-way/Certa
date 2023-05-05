@@ -30,6 +30,8 @@ This is for database
 Create another folder under root folder 
 Register that new folder in main project setting.py
 
+MODEL ---->> it will contain all the files shared by user and from here other user will only retrive the file
+
 Go inside the model of newly created file add the method ---> do makemigration then apply the migration by migrate command
 In Shell command type python manage.py shell…it will open a intractive consol for writing SQL
 
