@@ -35,6 +35,8 @@ MODEL ---->> it will contain all the files shared by user and from here other us
 Go inside the model of newly created file add the method ---> do makemigration then apply the migration by migrate command
 In Shell command type python manage.py shell…it will open a intractive consol for writing SQL
 
+
+Serializers allow complex data such as querysets and model instances to be converted to native Python datatypes that can then be easily rendered into JSON, XML or other content types. Serializers also provide deserialization, allowing parsed data to be converted back into complex types, after first validating the incoming data.
 ----------------------------------------------------------------------------------------
 
 Inside our 1st created folder make a new file by the name serializer.py
