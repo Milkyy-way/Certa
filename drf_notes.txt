@@ -1,0 +1,49 @@
+Normal django framework
+Django server<----------->website<----------->customer
+
+DRF is a library which is used for making APIs
+
+Serializer---View---Output
+JSON--> key value type data
+
+Thunder client is used for testing its same as postman
+
+----------------------------------------------------
+After installing rest frame work package through pip
+
+Go to settings and add rest_framework in installed apps
+
+Creaye an new folder in root directory and create a file __init__ file
+Create views--> import response class, it will take any python/serialized data and render it into jeson data
+			Import decorator also
+			Now create a method and put @anotation for "get/post etc"
+Create URL ---> import path
+		     import a views
+		Give the path urlpatterns = [ path('',views.getData)],
+Jump to root dir and in URLs provide own created folder url 
+
+
+
+------------------------------------------------------------------------
+
+This is for database
+Create another folder under root folder 
+Register that new folder in main project setting.py
+
+Go inside the model of newly created file add the method ---> do makemigration then apply the migration by migrate command
+In Shell command type python manage.py shell…it will open a intractive consol for writing SQL
+
+----------------------------------------------------------------------------------------
+
+Inside our 1st created folder make a new file by the name serializer.py
+
+This serializer will convert the item object inside model of 2nd file into jason body so that response object can understand which we created in 1st folder
+Import the serializer from rest_framework and then import the idem model from the 2nd folder(base app)
+
+Create serilizer class 
+
+-------------------------------
+ inside VIEW of 1st folder import item serlizer which we will create in 2nd  folder model file
+
+-----------------------------
+In view we can create other methods(post/put etc) and then in url we can set the URL
