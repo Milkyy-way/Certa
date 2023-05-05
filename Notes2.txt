@@ -1,0 +1,54 @@
+
+
+CLASSES
+-------
+We can use class keyword to create "class Person:"and to call the class we need object which we can create by p=Person()
+We have to create __init__(self,x,y) function to pass the argument
+__str__() we need to use this function if we want to return the class in form of string
+  def __str__(self):
+    return f"{self.name}({self.age})"
+
+SELF is current instance of the class and used to access the variables of class.
+We can use any name instead of self but it should be the 1st parameter in the argument
+
+We can modify the object parameter we can delete the parameter or delete the function.
+
+PASS statement ---> we can not leave the class undefined but if we created a class and we don’t want to mention any content then we need to write "pass" keyword after clearting class so that this class will not through error.
+
+__repr__ and __str__ are used to print object 
+
+CALL BY REFERENCEOR CLL BY VALUE
+--------------------------------
+
+Call by value is when u are calling immutable object.
+Passing mutable object can be termed as call as reference.
+
+using string to pass as argument 
+
+DATA CLASSES
+------------
+dataclass are used to make structured classes specially for storing data. its started from 3.7 version These classes hold certain properties and functions to deal specifically with the data and its representation.
+through pip install dataclasses we can import or use.
+decorders are used to implement data classes
+
+two objects if they have the same data is a very common task that’s needed with dataclasses
+Equality between DataClass objects checks for the equality of data present in it not the location. In normal class comparision equality is being stored by 
+
+
+
+CONTEXT MANAGER
+---------------
+do achive this we can use try and finally block also we can use with statement which is more suitable because with statement will make code more clear, safer, and reusable
+
+Syntex- 
+with expression as target_var:
+    do_something(target_var)
+context manager starts evaluating after with. and expression must return an object.
+there is a protocal with context manager in which 
+__enter__()--> to enter runtime context and __exit__()--->called when execution leaves the with code
+
+Call expression to obtain a context manager.
+Store the context manager’s .__enter__() and .__exit__() methods for later use.
+Call .__enter__() on the context manager and bind its return value to target_var if provided.
+Execute the with code block.
+Call .__exit__() on the context manager when the with code block finishes.
