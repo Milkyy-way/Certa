@@ -1,0 +1,14 @@
+Celery
+
+helps in creating scalable application
+can create efficient application by using it
+
+
+Celery is kind of task which uses the DS queue---> 1st in 1st out
+its a queue
+if we have some heavy task and we dont want to execute in django process and want to execute task in seperate flow which will not affect our main application then we can use celery.
+it can be crown job or preodic schedular
+Eg if i want to manage bday for employe then i ca set a task and celery will take care of it
+
+
+It wont work alone it will use redis or rabbit MQ which will work faster then sql. and schedule its task.
