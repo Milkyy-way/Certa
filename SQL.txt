@@ -1,0 +1,128 @@
+Structured Query Language
+
+Create, read, update, delete
+
+RELATIONAL DATABASES
+--------------------
+Relational data bases model data by storing rows and column in tables. Power is to retrive data and perticularly from where they are
+
+Major DB
+--------
+postgrad
+Oracle
+MySQL
+SqlServer
+
+DATABASE MODEL
+--------------
+it is a structure or formate of a database. Its like setting up contract with database management system.
+
+sqlite> .table ---> will list all the tables
+sqlite> CREATE TABLE Users(
+   ...> id INTEGER NOT NULL
+   ...> PRIMARY KEY AUTOINCREMENT,
+   ...> name VARCHAR(128),
+   ...> email VARCHAR(128)
+   ...> );
+sqlite> .table
+Users
+sqlite> .schema Users -----> Will open the table which we ask to open
+CREATE TABLE Users(
+id INTEGER NOT NULL
+PRIMARY KEY AUTOINCREMENT,
+name VARCHAR(128),
+email VARCHAR(128)
+);
+
+for INSERT
+INSER INTO Users (name,email) VALUES ()
+
+DELETE
+DELETE from USers where email='sbkjbask@jnjksk';
+
+UPDATE
+UPDATE Users SET name='Charles' where email='jsaghvja@hbsja';
+
+READING
+select * from USers
+1) OrderBY--> select * from User orders by name;
+
+****************************************************************************
+Run below command for sql in local repo, come outside of Firststage then run to enter in sqlite3 
+
+sqlite3 zip.sqlite3
+*****************************************************************************
+
+
+
+
+1)from users.models import User
+u = User(name='Kristen', email='kristen@kr') (u is actinng as object for db and we are storing name and email in database but to save we need to give save command)
+
+2) u.id (it will give the id present in db ....currently it will give no id)
+
+3) u.save() (it will save all the data passed to u for storing in db)
+
+4) u.id (now it will show id)
+
+after saving all the data if u want to retrive data from db
+
+5) User.objects.values()
+
+6) User.objects.filter(email='saurav@saurav').values() (this is will details of that email)
+
+7) User.objects.filter(email='saurav@saurav').delete() (It will delete that value)
+
+8) User.objects.filter(email='saurav@saurav').update(name='saurav 22')
+
+9) User.objects.values().order_by('email')
+
+10) quit()
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ONe to Many relation
+
+https://www.dj4e.com/lectures/DJ-04-Model-One.txt (someone changes the link)
+
+After importing dj4e project go to below path
+
+cd dj4e-samples/tracks
+python3 manage.py makemigrations                 #maynot find any change
+python3 manage.py migrate                        #create the database and table
+
+
+Start the django shell by below command:
+python3 manage.py shell
+
+when ">>>" prompt will appear then we need to import the track model
+
+from trackmodel.models import Artist, Genre, Album, Track;
+
+zep = Artist(name='led Zepplin')
+zep.save()
+zep.id
+abc = Artist(name='abcd')
+abc.save()
+
+made = Album(title='Who Made WHo',artist=abc)
+made.save()
+zep_vi = Album(title='VI', artist=zep)
+zep_vi.save()
+
+Album.object.value()                  # will give the data of that table
+
+ROCK = Genre(name=Rock)
+Rocke.save()
+met = Genre(name=Metal)
+met.save()
+
+x=Track(title='Black Dog', rating=5,length=297, count=9, album=zep_iv, genre=rock)
+x.save()
+x=Track(title='Stair Way', rating=5,length=497, count=9, album=zep_iv, genre=rock)
+x.save()
+x=Track(title='About to rock', rating=5,length=597, count=9, album=made, genre=met)
+x.save()
+x=Track(title='Who made who', rating=4,length=287, count=10, album=made, genre=met)
+x.save()
